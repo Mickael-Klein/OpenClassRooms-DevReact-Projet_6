@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/png" href="assets/favicon.png" />
+    <link
+      href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <title>Fisheye - photographe</title>
+    <script
+      src="https://kit.fontawesome.com/c29ae20713.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <header>
+      <a href="index.html" tabindex="1"
+        ><img src="assets/images/logo.png" class="logo" alt="Fisheye Home page"
+      /></a>
+    </header>
+    <main id="main">
+      <section class="photograph-header"></section>
+      <section class="photograph-work">
+        <div class="choice">
+          <label for="userSortSelection">Triez par</label>
+          <i class="fa-sharp fa-solid fa-greater-than chevron"></i>
+          <select
+            name="userSortSelection"
+            id="userSortSelection"
+            class="userSortSelection"
+            aria-label="Order by"
+            tabindex="3"
+          >
+            <option
+              value="Popularity"
+              class="selectOption"
+              id="optionPopularity"
+            >
+              Popularité
+            </option>
+            <option value="Date" class="selectOption" id="optionDate">
+              Date
+            </option>
+            <option value="Title" class="selectOption" id="optionTitle">
+              Titre
+            </option>
+          </select>
+        </div>
+        <div class="workGrid"></div>
+      </section>
+    </main>
+
+    <dialog
+      id="contact_modal"
+      class="modal"
+      aria-labelledby="modalTitle"
+      tabindex="-1"
+    >
+      <header>
+        <h2 id="modalTitle">Contactez-moi</h2>
+        <button onclick="closeModal()" aria-label="Close Contact Form">
+          <img src="assets/icons/close.svg" alt="Close Form" />
+        </button>
+      </header>
+      <form name="contact">
+        <div class="formData">
+          <label for="first">Prénom</label>
+          <input
+            class="input-text"
+            type="text"
+            id="first"
+            name="first"
+            minlength="2"
+            aria-label="First name"
+          />
+        </div>
+        <div class="formData">
+          <label for="last">Nom</label>
+          <input
+            class="input-text"
+            type="text"
+            id="last"
+            name="last"
+            aria-label="Last name"
+          />
+        </div>
+        <div class="formData">
+          <label for="email">Email</label>
+          <input
+            class="input-text"
+            type="email"
+            id="email"
+            name="email"
+            aria-label="Email"
+          />
+        </div>
+        <div class="formData">
+          <label for="message">Votre message</label>
+          <textarea
+            class="input-text input-text--message"
+            id="message"
+            name="message"
+            rows="10"
+            cols="30"
+            aria-label="Your message"
+          ></textarea>
+        </div>
+        <button
+          class="btn-submit"
+          type="submit"
+          value="Envoyer"
+          aria-label="Send"
+        >
+          Envoyer
+        </button>
+      </form>
+    </dialog>
+
+    <div class="modalBg"></div>
+
+    <dialog class="lightbox" aria-label="image closeup view" tabindex="-1">
+      <button class="closeLightbox" aria-label="Close Dialog">
+        <img src="assets/icons/RedCross.svg" alt="Cross to close lightbox" />
+      </button>
+      <button id="leftArrow" class="arrowButton" aria-label="Previous Image">
+        <img src="assets/icons/lightbox-left-arrow.svg" alt="Left Arrow" />
+      </button>
+      <button id="rightArrow" class="arrowButton" aria-label="Next Image">
+        <img src="assets/icons/lightbox-right-arrow.svg" alt="Right Arrow" />
+      </button>
+    </dialog>
+
+    <script src="scripts/factories/photographer.js" defer></script>
+    <script src="scripts/factories/media.js" defer></script>
+    <script src="scripts/factories/carousel.js" defer></script>
+    <script src="scripts/utils/carousel.js" defer></script>
+    <script src="scripts/pages/photographer.js" defer></script>
+    <script src="scripts/utils/contactForm.js" defer></script>
+  </body>
+</html>

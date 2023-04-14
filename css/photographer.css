@@ -1,0 +1,525 @@
+#contact_modal {
+  display: none;
+}
+
+.modalBg {
+  display: none;
+}
+
+.photograph-header {
+  background-color: #fafafa;
+  height: 300px;
+  margin: 0 100px 20px 100px;
+  border-radius: 5px;
+}
+
+.photograph-header article {
+  width: 90%;
+  height: 100%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.elemWrapper {
+  width: 30%;
+  min-width: 30%;
+  max-width: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.photograph-header article .headDiv h1 {
+  margin: 0;
+  font-size: 64px;
+  color: #d3573c;
+}
+
+.photograph-header article .headDiv p .localisation {
+  font-size: 24px;
+  color: #901c1c;
+  display: inline-block;
+  margin-bottom: 19px;
+}
+
+.photograph-header article .headDiv p .tagline {
+  font-size: 18px;
+  color: #525252;
+}
+
+.photograph-header article .imgDiv {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.photograph-header article .imgDiv img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  overflow-clip-margin: unset;
+  transform: scale(1.3);
+}
+
+.choice {
+  margin-bottom: 58px;
+  font-size: 18px;
+  position: relative;
+}
+
+.chevron {
+  position: absolute;
+  left: 235px;
+  top: 35%;
+  z-index: 3;
+  color: white;
+  transform: rotate(90deg);
+  transition: transform 0.5s ease-in-out;
+}
+
+.chevron--after {
+  transform: rotate(270deg);
+}
+
+.choice select {
+  all: unset;
+  display: inline-block;
+  width: 150px;
+  height: 30px;
+  background-color: #901c1c;
+  color: white;
+  padding: 20px;
+  padding-bottom: 15px;
+  cursor: pointer;
+  border-radius: 5px;
+  position: relative;
+}
+
+#optionPopularity {
+  display: none;
+}
+
+.photograph-work {
+  margin: 0 100px;
+}
+
+section.photograph-work > div.workGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(28%, 1fr));
+  grid-gap: 30px 5%;
+  justify-content: space-between;
+}
+
+.photograph-work article {
+  width: 100%;
+}
+
+.photograph-work article .mediaContainerLink {
+  display: inline-block;
+  width: 100%;
+  aspect-ratio: 1.16/1;
+  overflow: hidden;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.photograph-work article .mediaContainerLink:focus {
+  border: solid black 2px;
+}
+
+.photograph-work article .mediaContainerLink:hover img,
+.photograph-work article .mediaContainerLink:focus img {
+  transform: scale(1.05);
+}
+.photograph-work article .mediaContainerLink:hover video,
+.photograph-work article .mediaContainerLink:focus video {
+  transform: scale(1.05);
+}
+
+.photograph-work article .mediaContainerLink img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.5s ease-in-out;
+}
+
+.photograph-work article .mediaContainerLink video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease-in-out;
+}
+
+.photograph-work article .textContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 5px;
+}
+
+.photograph-work article .textContainer .mediaTitle {
+  color: #901c1c;
+  font-size: 20px;
+  margin: 0;
+  cursor: default;
+}
+
+.photograph-work article .textContainer button {
+  all: unset;
+  font-size: 20px;
+  cursor: pointer;
+  color: #901c1c;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 4px;
+}
+
+.photograph-work article .textContainer button:focus {
+  border: solid black 2px;
+}
+
+.photograph-work article .textContainer button i {
+  transform: scale(0.9);
+}
+
+.contact_button {
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+  padding: 11px;
+  width: 170px;
+  height: 70px;
+  border: none;
+  background-color: #901c1c;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.contact_button:hover,
+.contact_button:focus {
+  background-color: #db8876;
+  color: black;
+}
+
+.contact_button:focus {
+  border: solid black 2px;
+}
+
+#contact_modal {
+  position: fixed;
+  border: none;
+  animation: fadeIn 0.5s ease-in-out forwards;
+  z-index: 5;
+}
+
+.modal {
+  border-radius: 5px;
+  background-color: #db8876;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 35px;
+  padding-top: 10px;
+  margin: auto;
+  position: relative;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -100%);
+  }
+  to {
+    opacity: 1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.modalBg {
+  display: none;
+  width: 100%;
+  height: 100%;
+  background-color: #312e2e;
+  position: fixed;
+  animation: bgFadeIn 0.4s ease-in-out forwards;
+  z-index: 4;
+}
+
+@keyframes bgFadeIn {
+  from {
+    opacity: 0;
+    top: 0%;
+    left: 0;
+    transform: translate(0%, -100%);
+  }
+  to {
+    opacity: 0.6;
+    top: 0%;
+    left: 0%;
+    transform: translate(0%, 0%);
+  }
+}
+
+.modalBody--after__textContent p {
+  font-size: 36px;
+  text-align: center;
+}
+
+.modalBody--after__btn-submit {
+  position: relative;
+  bottom: 15%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.modal header {
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 0px;
+}
+
+.modal header img {
+  cursor: pointer;
+}
+
+.modal header h2 {
+  font-size: 64px;
+  font-weight: normal;
+  text-align: left;
+  padding-right: 30%;
+  text-align: left;
+  margin: 0;
+  line-height: 75px;
+}
+
+.modal header button {
+  all: unset;
+  position: absolute;
+  top: 35px;
+  right: 35px;
+}
+
+.modal header button:focus {
+  border: solid black 2px;
+}
+
+form {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+form .formData {
+  margin-bottom: 0;
+}
+
+form label {
+  color: #312e2e;
+  font-size: 36px;
+}
+
+form div {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: self-start;
+  margin-bottom: 26px;
+}
+
+form input {
+  width: 100%;
+  height: 68px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.5rem;
+}
+
+#message {
+  width: 100%;
+  height: 170px;
+  resize: none;
+  text-align: start;
+  resize: none;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.5rem;
+  margin-bottom: 0px;
+}
+
+.btn-submit {
+  border: none;
+  width: 35%;
+  height: 4.5rem;
+  padding: 1rem;
+  font-size: 20px;
+  background-color: #901c1c;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.btn-submit:hover,
+.btn-submit:focus {
+  background-color: black;
+  color: white;
+}
+
+.errorMsg {
+  margin: 3px 0px;
+  font-size: 1rem;
+}
+
+dialog {
+  display: block;
+  position: fixed;
+  border: none;
+  animation: fadeIn 0.5s ease-in-out forwards;
+  z-index: 5;
+}
+
+.lightbox {
+  width: 50%;
+  display: none;
+  background: white;
+  padding: 20px 100px;
+  border-radius: 10px;
+}
+
+.lightbox .closeLightbox {
+  all: unset;
+  position: absolute;
+  top: 25px;
+  right: 5%;
+  width: 42px;
+  height: 42px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.lightbox .closeLightbox img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.lightbox .arrowButton {
+  all: unset;
+  position: absolute;
+  transform: translateY(-50%);
+  width: 30px;
+  height: 50px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.lightbox .arrowButton img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+#leftArrow {
+  left: 6%;
+  top: 50%;
+}
+
+#rightArrow {
+  right: 6%;
+  top: 50%;
+}
+
+.mediaLi--notVisible {
+  display: none;
+}
+
+ul,
+li {
+  all: unset;
+}
+
+li .mediaContainer {
+  width: 95%;
+  aspect-ratio: 1.16/1;
+  overflow: hidden;
+  margin: auto;
+  border-radius: 5px;
+}
+
+li .mediaContainer img,
+li .mediaContainer video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.mediaTitle {
+  margin-left: 2.5%;
+  margin-top: 12px;
+  margin-bottom: 0;
+  color: #901c1c;
+  font-size: 24px;
+}
+
+main .fixedInfoContainer {
+  min-width: 300px;
+  position: fixed;
+  bottom: 0;
+  right: 36px;
+  background-color: #db8876;
+  padding: 21px 34px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 45px;
+  font-size: 24px;
+  font-weight: 500;
+}
+
+main .fixedInfoContainer p {
+  margin: 0;
+}
+
+main .fixedInfoContainer i {
+  transform: scale(0.85);
+}
+
+button:focus,
+select:focus {
+  border: solid black 2px;
+}
+
+.lightbox button:focus {
+  border: solid black 2px;
+}
+
+#wrongPhotographerContainer {
+  width: 80%;
+  margin: auto;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #db8876;
+  color: white;
+  font-size: 3rem;
+  border-radius: 10px;
+}
